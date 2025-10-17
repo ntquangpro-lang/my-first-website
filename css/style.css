@@ -1,0 +1,10 @@
+body {
+    background-color: #f4f4f4; /* Một màu xám rất nhạt */
+    color: #333; /* Màu chữ đen không quá gắt */
+    font-family: Arial, sans-serif; /* Phông chữ cơ bản, dễ đọc */
+}h1, h2 {
+    color: #0056b3; /* Một màu xanh dương đậm */
+}a {
+    text-decoration: none; /* Bỏ gạch chân */
+    color: #007bff; /* Màu xanh dương cho liên kết */
+}
