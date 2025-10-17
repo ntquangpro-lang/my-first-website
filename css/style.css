@@ -1,10 +1,93 @@
+ * {
+    box-sizing: border-box;
+}
+header, main section, footer, nav {
+    padding: 20px;
+}
+nav ul {
+    padding: 0; /* Xóa vùng đệm mặc định của trình duyệt */
+    list-style: none; /* Xóa dấu chấm đầu dòng */
+}
+
+nav li {
+    display: inline-block; /* Cho các mục menu xếp thành hàng ngang */
+    margin-right: 20px; /* Tạo khoảng cách giữa các mục menu */
+}
 body {
     background-color: #f4f4f4; /* Một màu xám rất nhạt */
     color: #333; /* Màu chữ đen không quá gắt */
     font-family: Arial, sans-serif; /* Phông chữ cơ bản, dễ đọc */
-}h1, h2 {
+}
+h1, h2 {
     color: #0056b3; /* Một màu xanh dương đậm */
-}a {
+}
+a {
     text-decoration: none; /* Bỏ gạch chân */
     color: #007bff; /* Màu xanh dương cho liên kết */
+}
+.container {
+    width: 960px; /* Chiều rộng tối đa của nội dung */
+    margin: 0 auto; /* Đây là "phép thuật" để tự động căn giữa */
+}
+.header-container {
+    display: flex; /* Kích hoạt Flexbox */
+    justify-content: space-between; /* Đẩy 2 item ra hai phía */
+    align-items: center; /* Căn giữa chúng theo chiều dọc */
+}
+.cta-button {
+    display: inline-block; /* Để có thể áp dụng padding, margin */
+    background-color: #007bff; /* Màu nền xanh dương */
+    color: white; /* Màu chữ trắng */
+    padding: 10px 15px; /* Vùng đệm 10px trên dưới, 15px trái phải */
+    border-radius: 5px; /* Bo tròn các góc */
+    margin-top: 15px; /* Tạo khoảng cách với tiêu đề */
+}
+.projects-list {
+    display: flex; /* Kích hoạt Flexbox */
+    flex-wrap: wrap; /* Cho phép các dự án tự xuống dòng */
+    gap: 20px; /* Tạo khoảng cách 20px giữa các dự án */
+
+    /* Xóa các kiểu danh sách mặc định */
+    list-style: none;
+    padding: 0;
+    margin-top: 20px; /* Thêm khoảng cách với cái nút bấm */
+}
+.projects-list li {
+    flex-basis: 300px; /* Kích thước cơ bản của mỗi dự án là 300px */
+    flex-grow: 1; /* Cho phép dự án co giãn để lấp đầy hàng */
+
+    /* Thêm một chút "trang điểm" cho đẹp */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #ffffff; /* Nền trắng cho các thẻ */
+}
+/* ================= */
+/* RESPONSIVE CSS   */
+/* ================= */
+
+/* CSS cho Tablet */
+@media (max-width: 768px) {
+    
+    .container {
+        width: 90%; /* Cho container linh hoạt hơn, không cứng 960px nữa */
+    }
+
+    .header-container {
+        flex-direction: column; /* Chuyển header thành 1 cột */
+        gap: 15px;
+    }
+
+    .projects-list li {
+        /* Cho phép mỗi dự án chiếm gần 50% */
+        flex-basis: calc(50% - 10px); 
+    }
+}
+/* CSS cho Mobile */
+@media (max-width: 480px) {
+    
+    .projects-list li {
+        /* Cho phép mỗi dự án chiếm 100% */
+        flex-basis: 100%; 
+    }
 }
